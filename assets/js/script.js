@@ -1,6 +1,13 @@
-console.log("hello")
+var pokemonInputBox = document.getElementById('pokemon-finder');
 
-fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+var pokemonButton = document.getElementById('search-btn');
+
+console.log(pokemonInputBox);
+
+pokemonButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log(pokemonInputBox.value);
+    fetch("https://pokeapi.co/api/v2/pokemon/ditto")
     .then(function(response) {
         return response.json();
     })
@@ -9,3 +16,5 @@ fetch("https://pokeapi.co/api/v2/pokemon/ditto")
         console.log(data.name);
         console.log(data.abilities)
     })
+    console.log("hi");
+})
